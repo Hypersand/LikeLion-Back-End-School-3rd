@@ -28,8 +28,20 @@ public class LifeQuotesProject {
             }
             if (입력.equals("목록")) {
                 for (int i = count; i > 0; i--) {
-                    System.out.println(i + " / " + map.get(count).작가 + " / " + map.get(count).명언);
+                    System.out.println(i + " / " + map.get(i).작가 + " / " + map.get(i).명언);
 
+                }
+            }
+
+            if (입력.contains("삭제")) {
+                String s = 입력.substring(6);
+                int 숫자 = Integer.parseInt(s);
+                if (!map.containsKey(숫자)) {
+                    System.out.println(숫자 + "번 명언은 존재하지 않습니다.");
+                }
+                else {
+                    map.remove(숫자);
+                    System.out.println(숫자 + "번 명언이 삭제되었습니다.");
                 }
             }
         }
