@@ -28,6 +28,9 @@ public class LifeQuotesProject {
             }
             if (입력.equals("목록")) {
                 for (int i = count; i > 0; i--) {
+                    if (!map.containsKey(i)) {
+                        continue;
+                    }
                     System.out.println(i + " / " + map.get(i).작가 + " / " + map.get(i).명언);
 
                 }
@@ -43,6 +46,18 @@ public class LifeQuotesProject {
                     map.remove(숫자);
                     System.out.println(숫자 + "번 명언이 삭제되었습니다.");
                 }
+            }
+
+            if (입력.contains("수정")) {
+                String s = 입력.substring(6);
+                int 숫자 = Integer.parseInt(s);
+                System.out.println("명언(기존) : " + map.get(숫자).명언);
+                System.out.print("명언 : ");
+                String 명언 = sc.nextLine();
+                System.out.println("작가(기존) : " + map.get(숫자).작가);
+                System.out.print("작가 : ");
+                String 작가 = sc.nextLine();
+                map.put(숫자, new 명언및작가(명언, 작가));
             }
         }
 
