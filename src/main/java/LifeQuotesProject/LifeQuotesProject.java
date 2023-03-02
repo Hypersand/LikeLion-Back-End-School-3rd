@@ -6,6 +6,8 @@ public class LifeQuotesProject {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("== 명언 앱 ==");
+        int count = 0;
+
         while(true) {
             System.out.print("명령) ");
             String 입력 = sc.nextLine();
@@ -17,6 +19,8 @@ public class LifeQuotesProject {
                 String 명언 = sc.nextLine();
                 System.out.print("작가 : ");
                 String 작가 = sc.nextLine();
+                count++;
+                System.out.println(count+"번 명언이 등록되었습니다.");
             }
         }
 
